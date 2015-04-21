@@ -48,6 +48,8 @@ namespace Trabalho_de_PWEB.Account
 
             var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
 
+            var user = manager.FindById(User.Identity.GetUserId());
+
             if (!IsPostBack)
             {
                 // Determine the sections to render
@@ -77,6 +79,12 @@ namespace Trabalho_de_PWEB.Account
                         : String.Empty;
                     successMessage.Visible = !String.IsNullOrEmpty(SuccessMessage);
                 }
+            }
+
+            if (manager.GetRoles(User.Identity.GetUserId()).Contains("Veterinario"))
+            {
+                PlaceHolder1.Visible = true;
+                AdminMain.Visible = true;
             }
         }
 

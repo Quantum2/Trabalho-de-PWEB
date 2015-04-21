@@ -30,7 +30,7 @@ namespace Trabalho_de_PWEB.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DBContext", throwIfV1Schema: false)
         {
         }
 
