@@ -11,10 +11,16 @@ using Microsoft.Owin.Security;
 using Owin;
 using Trabalho_de_PWEB.Models;
 
-namespace Trabalho_de_PWEB.Cliente
+namespace Trabalho_de_PWEB.Admin
 {
-    public partial class Consultas : System.Web.UI.Page
+    public partial class Login : System.Web.UI.Page
     {
+        protected string SuccessMessage
+        {
+            get;
+            private set;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
@@ -23,7 +29,14 @@ namespace Trabalho_de_PWEB.Cliente
 
             var user = manager.FindById(User.Identity.GetUserId());
 
-            SqlDataSource1.SelectParameters.Add("@userid1", User.Identity.GetUserId());
+            if (user != null && manager.GetRoles(User.Identity.GetUserId()).Contains("Veterinario"))
+            {
+                
+            }
+            else
+            {
+
+            }
         }
     }
 }

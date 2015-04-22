@@ -166,7 +166,6 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
-    <Content Include="AreaCliente.aspx" />
     <Content Include="Cliente\Consultas.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-yeti.css" />
@@ -180,6 +179,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="Admin\Web.config" />
+    <Content Include="Cliente\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -353,13 +353,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="AreaCliente.aspx.cs">
-      <DependentUpon>AreaCliente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AreaCliente.aspx.designer.cs">
-      <DependentUpon>AreaCliente.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Cliente\Consultas.aspx.cs">
       <DependentUpon>Consultas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
