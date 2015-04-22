@@ -21,15 +21,4 @@ Note-se que, recentemente, Robert Mugabe tem vindo a ser criticado por pretender
 A festa dos 91 anos do ditador terá lugar no Elephant Hills Resort, um luxuoso hotel e spa, durante um campeonato de golfe, em Victoria Falls.</p>
     </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Marcar consultas</h2>
-            <p>
-                Marcar consultas para os seus animais</p>
-            <p>
-                <a class="btn btn-default" href="Cliente/Consultas.aspx">Seguir »</a>
-            </p>
-        </div>
-    </div>
-
 </asp:Content>
