@@ -173,6 +173,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="imagens\coelho.jpg" />
+    <Content Include="imagens\gatos-podem-prever-sua-morte.jpg" />
+    <Content Include="imagens\racas-caes.jpg" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
