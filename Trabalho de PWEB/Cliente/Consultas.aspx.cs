@@ -17,13 +17,27 @@ namespace Trabalho_de_PWEB.Cliente
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String userid;
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-
             var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
-
             var user = manager.FindById(User.Identity.GetUserId());
 
-            SqlDataSource1.SelectParameters.Add("@userid1", User.Identity.GetUserId());
+            userid = user.Id;
+
+            SqlDataSource1.SelectParameters["userid_var"].DefaultValue = userid;
+            GridView1.DataBind();
+        }
+
+        public void existentes_Click(object sender, EventArgs e)
+        {
+            PlaceHolder1.Visible = true;
+            PlaceHolder2.Visible = false;
+        }
+
+        public void novas_Click(object sender, EventArgs e)
+        {
+            PlaceHolder2.Visible = true;
+            PlaceHolder1.Visible = false;
         }
     }
 }
