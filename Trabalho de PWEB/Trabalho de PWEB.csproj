@@ -147,7 +147,10 @@
   <ItemGroup>
     <Content Include="aloja.aspx" />
     <Content Include="imagens\100_0681-e1362407568758.jpg" />
+    <Content Include="imagens\coelho.jpg" />
+    <Content Include="imagens\gatos-podem-prever-sua-morte.jpg" />
     <Content Include="imagens\medicos-veterinarios-equipa.jpg" />
+    <Content Include="imagens\racas-caes.jpg" />
     <Content Include="imagens\Sem Título.png" />
     <Content Include="serviços.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
@@ -178,9 +181,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="imagens\coelho.jpg" />
-    <Content Include="imagens\gatos-podem-prever-sua-morte.jpg" />
-    <Content Include="imagens\racas-caes.jpg" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

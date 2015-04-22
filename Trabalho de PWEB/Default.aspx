@@ -2,9 +2,10 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-    <div class="jumbotron">
+        <p>&nbsp;</p>
         <img src="imagens/racas-caes.jpg" /><img src="imagens/gatos-podem-prever-sua-morte.jpg" /><img src="imagens/coelho.jpg" />
-        <h2 class="text-left"><strong>Noticías do mundo Animal</strong></h2>
+    <div class="jumbotron">
+        &nbsp;<h2 class="text-left"><strong>Noticías do mundo Animal</strong></h2>
         <p></p>
         <h4 style="font-size: 24px"><strong>Animais selvagens abatidos para celebrar aniversário de Mugabe</strong></h4>
         <p></p>
