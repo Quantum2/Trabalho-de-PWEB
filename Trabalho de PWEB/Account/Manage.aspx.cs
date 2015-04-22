@@ -9,11 +9,17 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using Trabalho_de_PWEB.Models;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+using System.Web.Configuration;
 
 namespace Trabalho_de_PWEB.Account
 {
     public partial class Manage : System.Web.UI.Page
     {
+        private string connectionString = WebConfigurationManager.ConnectionStrings["DBContext"].ConnectionString;
+
         protected string SuccessMessage
         {
             get;
@@ -62,6 +68,23 @@ namespace Trabalho_de_PWEB.Account
                     CreatePassword.Visible = true;
                     ChangePassword.Visible = false;
                 }
+
+                int cod_cliente;
+                Label1.Visible = true;
+                HyperLink1.Visible = true;
+
+                String selectSQL = "SELECT [cod_cliente] FROM [RelsClientes] WHERE ([user_id] = '" + User.Identity.GetUserId().ToString() + "')";   
+                SqlConnection con = new SqlConnection(connectionString);
+                SqlCommand cmd = new SqlCommand(selectSQL, con);
+
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                cod_cliente = (int)reader[1];
+                String selectSQL2 = "SELECT nome FROM Cliente WHERE (cod_cliente = " + cod_cliente + " )";
+                cmd = new SqlCommand(selectSQL2, con);
+                reader = cmd.ExecuteReader();
+                Label1.Text = String.Format("{0}", reader[0]);
+                con.Close();
 
                 // Render success message
                 var message = Request.QueryString["m"];
