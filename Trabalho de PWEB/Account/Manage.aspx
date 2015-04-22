@@ -17,7 +17,8 @@
                 <h4>Mudar as definiçoes de conta</h4>
                 <hr />
                 <dl class="dl-horizontal">
-                    <dt>Nome: <asp:Label ID="Label1" runat="server" Font-Bold="False" Visible="False"></asp:Label><br />
+                    <dt>Nome: <asp:Label ID="Label1" runat="server" Font-Bold="False" Visible="False"></asp:Label>
+                        <dd></dd>
                     </dt>
                 </dl>
                 <hr />

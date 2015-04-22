@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Trabalho_de_PWEB._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+    <div>
     <div class="jumbotron">
         <img src="imagens/racas-caes.jpg" /><img src="imagens/gatos-podem-prever-sua-morte.jpg" /><img src="imagens/coelho.jpg" />
         <h2 class="text-left">Noticías do mundo Animal</h2>
@@ -19,8 +19,8 @@ Musasa aguarda a autorização da autoridade que gere a vida selvagem no Zimbabu
 Note-se que, recentemente, Robert Mugabe tem vindo a ser criticado por pretender exportar 27 elefantes para a China, país conhecido pelo negócio do marfim.
  
 A festa dos 91 anos do ditador terá lugar no Elephant Hills Resort, um luxuoso hotel e spa, durante um campeonato de golfe, em Victoria Falls.</p>
-    </div>
-
+    </div></div>
+    <hr />
     <div class="row">
         <div class="col-md-4">
             <h2>Marcar consultas</h2>
