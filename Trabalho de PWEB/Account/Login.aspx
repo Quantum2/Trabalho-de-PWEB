@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <p>
-                    <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Criar nova conta</asp:HyperLink>
+                    <asp:HyperLink runat="server" style="background-color:white;" ID="RegisterHyperLink" ViewStateMOde="Disabled">Criar nova conta!</asp:HyperLink>
                 </p>
                 <p>
                     <%-- Enable this once you have account confirmation enabled for password reset functionality
@@ -56,7 +56,7 @@
             </section>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4" hidden="hidden">
             <section id="socialLoginForm">
                 <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
             </section>

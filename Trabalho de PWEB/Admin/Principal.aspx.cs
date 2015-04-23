@@ -13,7 +13,7 @@ using Trabalho_de_PWEB.Models;
 
 namespace Trabalho_de_PWEB.Admin
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Principal : System.Web.UI.Page
     {
         protected string SuccessMessage
         {
@@ -31,7 +31,7 @@ namespace Trabalho_de_PWEB.Admin
 
             if (user != null && manager.GetRoles(User.Identity.GetUserId()).Contains("Veterinario"))
             {
-                
+
             }
             else
             {
