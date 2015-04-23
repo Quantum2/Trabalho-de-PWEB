@@ -35,8 +35,29 @@ namespace Trabalho_de_PWEB.Admin
             }
             else
             {
-
+                Response.Redirect("Default.aspx");
             }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            consultas.Visible = true;
+            animais.Visible = false;
+            clientes.Visible = false;
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            consultas.Visible = false;
+            animais.Visible = true;
+            clientes.Visible = false;
+        }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            consultas.Visible = false;
+            animais.Visible = false;
+            clientes.Visible = true;
         }
     }
 }
