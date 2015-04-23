@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div>
     <div class="jumbotron">
-        <img src="imagens/racas-caes.jpg" /><img src="imagens/gatos-podem-prever-sua-morte.jpg" /><img src="imagens/coelho.jpg" />
+        <img src="imagens/racas-caes.jpg" /><img src="imagens/gatos-podem-prever-sua-morte.jpg" /><img src="imagens/coelho.jpg" /></div>
         <h2 class="text-left"><strong>Noticías do mundo Animal</strong></h2>
         <p></p>
         <h4 style="font-size: 24px"><strong>Animais selvagens abatidos para celebrar aniversário de Mugabe</strong></h4>
@@ -38,8 +38,5 @@ Quando funcionar, o hospital, cujo modelo "existe em vários pontos do mundo", t
 
 "Essas pessoas vão ter acesso aos cuidados médico-veterinários com preços controlados (pagarão o preço de custo) ou se não tiverem rendimentos não pagam nada", explicou a responsável.
         </p>
-
-
-</div>
     </div>
 </asp:Content>
