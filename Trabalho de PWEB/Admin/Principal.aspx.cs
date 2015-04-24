@@ -66,17 +66,36 @@ namespace Trabalho_de_PWEB.Admin
             int minutos = Convert.ToInt32(DropDownList2.SelectedValue);
 
             String command = "INSERT INTO [Consulta] ([local], [data], [hora]) VALUES (@local, @data, @hora)";
+            String reads = "SELECT cod_consulta FROM Consulta WHERE (local = @d) AND (hora = @h)";
+            String command2 = "INSERT INTO [Animal_consulta] ([cod_consulta], [cod_animal]) VALUES (@cod_consulta, @cod_animal)";
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(command, con);
+            SqlCommand cmd2 = new SqlCommand(command2, con);
+            SqlCommand read = new SqlCommand(reads, con);
 
             cmd.Parameters.AddWithValue("@local", local_consulta);
             cmd.Parameters.AddWithValue("@data", data);
             cmd.Parameters.AddWithValue("@hora", hora + ":" + minutos);
+            read.Parameters.AddWithValue("@d", local_consulta);
+            read.Parameters.AddWithValue("@h", hora + ":" + minutos + ":00");
 
             con.Open();
+
             cmd.ExecuteNonQuery();
 
+            SqlDataReader rdr = read.ExecuteReader();
+            rdr.Read();
+            var myString = rdr.GetInt32(0);
+            rdr.Close();
+
+            cmd2.Parameters.AddWithValue("@cod_consulta", Convert.ToInt32(myString));
+            cmd2.Parameters.AddWithValue("@cod_animal", DropDownList4.SelectedValue);
+
+            cmd2.ExecuteNonQuery();
+
             GridView1.DataBind();
+
+            con.Close();
         }
     }
 }
