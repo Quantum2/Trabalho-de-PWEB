@@ -10,16 +10,14 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using Trabalho_de_PWEB.Models;
+using System.Data.SqlClient;
+using System.Web.Configuration;
 
 namespace Trabalho_de_PWEB.Admin
 {
     public partial class Principal : System.Web.UI.Page
     {
-        protected string SuccessMessage
-        {
-            get;
-            private set;
-        }
+        private string connectionString = WebConfigurationManager.ConnectionStrings["DBContext"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -58,6 +56,22 @@ namespace Trabalho_de_PWEB.Admin
             consultas.Visible = false;
             animais.Visible = false;
             clientes.Visible = true;
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            String local_consulta = TextBox1.Text;
+            String data = TextBox2.Text;
+            int hora = Convert.ToInt32(DropDownList1.SelectedValue);
+            int minutos = Convert.ToInt32(DropDownList2.SelectedValue);
+
+            String command = "INSERT INTO [Consulta] ([local], [data], [hora]) VALUES (@local, @data, @hora)";
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand(command, con);
+
+            con.Open();
+
+
         }
     }
 }

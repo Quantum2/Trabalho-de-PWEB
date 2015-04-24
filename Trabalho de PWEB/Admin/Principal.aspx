@@ -24,6 +24,7 @@
             <asp:Parameter DbType="Time" Name="original_hora" />
         </UpdateParameters>
     </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DBContext %>" SelectCommand="SELECT [cod_cliente], [nome] FROM [Cliente] ORDER BY [nome]"></asp:SqlDataSource>
     <div>
         <h4>
             <asp:LinkButton Style="background-color: white;" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Adicionar consultas</asp:LinkButton>&nbsp;
@@ -40,6 +41,10 @@
         <asp:Label ID="Label2" runat="server" Text="Data da consulta:"></asp:Label>
         <asp:TextBox ID="TextBox2" runat="server" TextMode="Date"></asp:TextBox>
         &nbsp;<p></p>
+        <asp:Label ID="Label7" runat="server" Text="Cliente:"></asp:Label>
+        <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="nome" DataValueField="cod_cliente">
+        </asp:DropDownList>
+        <p></p>
         <asp:Label ID="Label3" runat="server" Text="Hora da consulta:"></asp:Label>
 
         <asp:DropDownList ID="DropDownList1" runat="server">
@@ -77,12 +82,14 @@
             <asp:ListItem>45</asp:ListItem>
         </asp:DropDownList>
         <asp:Label ID="Label5" runat="server" Font-Bold="True" Text="M"></asp:Label>
+        <p></p>
+        <asp:Button ID="Button1" runat="server" Text="Adicionar !" OnClick="Button1_Click" />
         <hr />
         <asp:Label ID="Label6" runat="server" Text="Consultas existentes " Font-Bold="True" Font-Italic="True" Font-Underline="True"></asp:Label>
         <p></p>
         <asp:GridView ID="GridView1" runat="server" style="background-color:white;" AllowSorting="True" DataSourceID="SqlDataSource1">
             <Columns>
-                <asp:CommandField ShowEditButton="True" />
+                <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
             </Columns>
         </asp:GridView>
     </asp:Panel>
