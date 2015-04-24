@@ -69,9 +69,14 @@ namespace Trabalho_de_PWEB.Admin
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(command, con);
 
+            cmd.Parameters.AddWithValue("@local", local_consulta);
+            cmd.Parameters.AddWithValue("@data", data);
+            cmd.Parameters.AddWithValue("@hora", hora + ":" + minutos);
+
             con.Open();
+            cmd.ExecuteNonQuery();
 
-
+            GridView1.DataBind();
         }
     }
 }

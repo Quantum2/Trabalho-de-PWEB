@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:DBContext %>" DeleteCommand="DELETE FROM [Consulta] WHERE [cod_consulta] = @original_cod_consulta AND (([local] = @original_local) OR ([local] IS NULL AND @original_local IS NULL)) AND (([data] = @original_data) OR ([data] IS NULL AND @original_data IS NULL)) AND (([hora] = @original_hora) OR ([hora] IS NULL AND @original_hora IS NULL))" InsertCommand="INSERT INTO [Consulta] ([local], [data], [hora]) VALUES (@local, @data, @hora)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Consulta]" UpdateCommand="UPDATE [Consulta] SET [local] = @local, [data] = @data, [hora] = @hora WHERE [cod_consulta] = @original_cod_consulta AND (([local] = @original_local) OR ([local] IS NULL AND @original_local IS NULL)) AND (([data] = @original_data) OR ([data] IS NULL AND @original_data IS NULL)) AND (([hora] = @original_hora) OR ([hora] IS NULL AND @original_hora IS NULL))">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:DBContext %>" DeleteCommand="DELETE FROM Consulta WHERE (cod_consulta = @original_cod_consulta) AND (local = @original_local) AND (data = @original_data) AND (hora = @original_hora) OR (cod_consulta = @original_cod_consulta) AND (local IS NULL) AND (data = @original_data) AND (hora = @original_hora) AND (@original_local IS NULL) OR (cod_consulta = @original_cod_consulta) AND (local = @original_local) AND (data IS NULL) AND (hora = @original_hora) AND (@original_data IS NULL) OR (cod_consulta = @original_cod_consulta) AND (local IS NULL) AND (data IS NULL) AND (hora = @original_hora) AND (@original_local IS NULL) AND (@original_data IS NULL) OR (cod_consulta = @original_cod_consulta) AND (local = @original_local) AND (data = @original_data) AND (hora IS NULL) AND (@original_hora IS NULL) OR (cod_consulta = @original_cod_consulta) AND (local IS NULL) AND (data = @original_data) AND (hora IS NULL) AND (@original_local IS NULL) AND (@original_hora IS NULL) OR (cod_consulta = @original_cod_consulta) AND (local = @original_local) AND (data IS NULL) AND (hora IS NULL) AND (@original_data IS NULL) AND (@original_hora IS NULL) OR (cod_consulta = @original_cod_consulta) AND (local IS NULL) AND (data IS NULL) AND (hora IS NULL) AND (@original_local IS NULL) AND (@original_data IS NULL) AND (@original_hora IS NULL)" InsertCommand="INSERT INTO [Consulta] ([local], [data], [hora]) VALUES (@local, @data, @hora)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Consulta]" UpdateCommand="UPDATE [Consulta] SET [local] = @local, [data] = @data, [hora] = @hora WHERE [cod_consulta] = @original_cod_consulta AND (([local] = @original_local) OR ([local] IS NULL AND @original_local IS NULL)) AND (([data] = @original_data) OR ([data] IS NULL AND @original_data IS NULL)) AND (([hora] = @original_hora) OR ([hora] IS NULL AND @original_hora IS NULL))">
         <DeleteParameters>
             <asp:Parameter Name="original_cod_consulta" Type="Int32" />
             <asp:Parameter Name="original_local" Type="String" />
@@ -87,9 +87,14 @@
         <hr />
         <asp:Label ID="Label6" runat="server" Text="Consultas existentes " Font-Bold="True" Font-Italic="True" Font-Underline="True"></asp:Label>
         <p></p>
-        <asp:GridView ID="GridView1" runat="server" style="background-color:white;" AllowSorting="True" DataSourceID="SqlDataSource1">
+        <asp:GridView ID="GridView1" runat="server" Style="background-color: white;" AllowSorting="True" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="cod_consulta">
             <Columns>
-                <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
+                <asp:CommandField ShowEditButton="True" ShowDeleteButton="True"></asp:CommandField>
+                <asp:BoundField DataField="cod_consulta" HeaderText="cod_consulta" ReadOnly="True" InsertVisible="False" SortExpression="cod_consulta"></asp:BoundField>
+                <asp:BoundField DataField="local" HeaderText="local" SortExpression="local"></asp:BoundField>
+                <asp:BoundField DataField="data" HeaderText="data" SortExpression="data"></asp:BoundField>
+                <asp:BoundField DataField="hora" HeaderText="hora" SortExpression="hora"></asp:BoundField>
+
             </Columns>
         </asp:GridView>
     </asp:Panel>
