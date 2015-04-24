@@ -35,7 +35,7 @@
     </div>
     <hr />
 
-    <asp:Panel ID="consultas" runat="server">
+    <asp:Panel ID="consultas" runat="server" Visible="False">
         <asp:Label ID="Label1" runat="server" Text="Local da consulta:"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <p></p>
@@ -106,9 +106,47 @@
         </asp:GridView>
     </asp:Panel>
 
-    <asp:Panel ID="animais" runat="server">
-
-
+    <asp:Panel ID="animais" runat="server" Visible="False">
+        <asp:Label ID="Label10" runat="server" Text="Adicionar animal" Font-Bold="True" Font-Italic="True" Font-Underline="True"></asp:Label>
+        <p></p>
+        <asp:Label ID="Label11" runat="server" Text="Nome:"></asp:Label>
+        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox><p></p>
+        <asp:Label ID="Label12" runat="server" Text="Raça:"></asp:Label>
+        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox><p></p>
+        <asp:Label ID="Label13" runat="server" Text="Idade:"></asp:Label>
+        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox><p></p>
+        <asp:Label ID="Label14" runat="server" Text="Cliente:"></asp:Label>
+        <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource2" DataTextField="nome" DataValueField="cod_cliente">
+        </asp:DropDownList><p></p>
+        <asp:Button ID="Button2" runat="server" Text="Adicionar" OnClick="Button2_Click" />
+        <hr />
+        <asp:Label ID="Label15" runat="server" Text="Animais existentes" Font-Bold="True" Font-Italic="True" Font-Underline="True"></asp:Label><p>
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:DBContext %>" DeleteCommand="DELETE FROM [Animal] WHERE [cod_animal] = @cod_animal" InsertCommand="INSERT INTO [Animal] ([nome], [raca], [idade]) VALUES (@nome, @raca, @idade)" SelectCommand="SELECT * FROM [Animal] ORDER BY [cod_animal], [nome]" UpdateCommand="UPDATE [Animal] SET [nome] = @nome, [raca] = @raca, [idade] = @idade WHERE [cod_animal] = @cod_animal">
+                <DeleteParameters>
+                    <asp:Parameter Name="cod_animal" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="nome" Type="String" />
+                    <asp:Parameter Name="raca" Type="String" />
+                    <asp:Parameter Name="idade" Type="Int32" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="nome" Type="String" />
+                    <asp:Parameter Name="raca" Type="String" />
+                    <asp:Parameter Name="idade" Type="Int32" />
+                    <asp:Parameter Name="cod_animal" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
+        </p>
+        <asp:GridView ID="GridView3" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="cod_animal" DataSourceID="SqlDataSource4">
+            <Columns>
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:BoundField DataField="cod_animal" HeaderText="cod_animal" InsertVisible="False" ReadOnly="True" SortExpression="cod_animal" />
+                <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
+                <asp:BoundField DataField="raca" HeaderText="raca" SortExpression="raca" />
+                <asp:BoundField DataField="idade" HeaderText="idade" SortExpression="idade" />
+            </Columns>
+        </asp:GridView>
     </asp:Panel>
     <asp:Panel ID="clientes" runat="server" Visible="False">
         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:DBContext %>" DeleteCommand="DELETE FROM [Cliente] WHERE [cod_cliente] = @original_cod_cliente AND [nome] = @original_nome AND (([morada] = @original_morada) OR ([morada] IS NULL AND @original_morada IS NULL)) AND (([data_nascimento] = @original_data_nascimento) OR ([data_nascimento] IS NULL AND @original_data_nascimento IS NULL))" InsertCommand="INSERT INTO [Cliente] ([nome], [morada], [data_nascimento]) VALUES (@nome, @morada, @data_nascimento)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [cod_cliente], [nome], [morada], [data_nascimento] FROM [Cliente] ORDER BY [nome], [cod_cliente]" UpdateCommand="UPDATE [Cliente] SET [nome] = @nome, [morada] = @morada, [data_nascimento] = @data_nascimento WHERE [cod_cliente] = @original_cod_cliente AND [nome] = @original_nome AND (([morada] = @original_morada) OR ([morada] IS NULL AND @original_morada IS NULL)) AND (([data_nascimento] = @original_data_nascimento) OR ([data_nascimento] IS NULL AND @original_data_nascimento IS NULL))">

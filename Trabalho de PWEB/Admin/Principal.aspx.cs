@@ -29,7 +29,7 @@ namespace Trabalho_de_PWEB.Admin
 
             if (user != null && manager.GetRoles(User.Identity.GetUserId()).Contains("Veterinario"))
             {
-
+                Page.Title = "Administração";
             }
             else
             {
@@ -95,6 +95,27 @@ namespace Trabalho_de_PWEB.Admin
 
             GridView1.DataBind();
 
+            con.Close();
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            String nome = TextBox3.Text;
+            String raca = TextBox4.Text;
+            int idade = Convert.ToInt32(TextBox5.Text);
+            int dono = Convert.ToInt32(DropDownList5.SelectedValue);
+
+            String command = "INSERT INTO [Animal] ([nome], [raca], [idade]) VALUES (@nome, @raca, @idade)";
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand(command, con);
+
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@raca", raca);
+            cmd.Parameters.AddWithValue("@idade", idade);
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            GridView3.DataBind();
             con.Close();
         }
     }
