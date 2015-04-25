@@ -171,10 +171,40 @@
                 <asp:Parameter DbType="Date" Name="original_data_nascimento" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:Label ID="Label8" runat="server" Text="Clientes existentes" Font-Bold="True" Font-Italic="True" Font-Underline="True"></asp:Label><p></p>
+        <asp:Label ID="Label8" runat="server" Text="Clientes existentes" Font-Bold="True" Font-Italic="True" Font-Underline="True"></asp:Label><p>
+            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:DBContext %>" DeleteCommand="DELETE FROM [Veterinario] WHERE [Cod_veterinario] = @Cod_veterinario" InsertCommand="INSERT INTO [Veterinario] ([Cod_veterinario], [Nome], [Idade], [Sexo]) VALUES (@Cod_veterinario, @Nome, @Idade, @Sexo)" SelectCommand="SELECT Veterinario.Cod_veterinario, Veterinario.Nome, Veterinario.Idade, Veterinario.Sexo, AspNetUsers.Email FROM Veterinario INNER JOIN RelsVeterinarios ON Veterinario.Cod_veterinario = RelsVeterinarios.Cod_veterinario INNER JOIN AspNetUsers ON RelsVeterinarios.user_id = AspNetUsers.Id ORDER BY Veterinario.Nome" UpdateCommand="UPDATE [Veterinario] SET [Nome] = @Nome, [Idade] = @Idade, [Sexo] = @Sexo WHERE [Cod_veterinario] = @Cod_veterinario">
+                <DeleteParameters>
+                    <asp:Parameter Name="Cod_veterinario" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="Cod_veterinario" Type="Int32" />
+                    <asp:Parameter Name="Nome" Type="String" />
+                    <asp:Parameter DbType="Date" Name="Idade" />
+                    <asp:Parameter Name="Sexo" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="Nome" Type="String" />
+                    <asp:Parameter DbType="Date" Name="Idade" />
+                    <asp:Parameter Name="Sexo" Type="String" />
+                    <asp:Parameter Name="Cod_veterinario" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
+        </p>
         <asp:GridView ID="GridView2" runat="server" AllowSorting="True" DataSourceID="SqlDataSource3">
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+            </Columns>
+        </asp:GridView><hr />
+        <asp:Label ID="Label16" runat="server" Text="Veterinários existentes" Font-Bold="True" Font-Italic="True" Font-Underline="True"></asp:Label><p></p>
+        <asp:GridView ID="GridView4" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Cod_veterinario" DataSourceID="SqlDataSource5">
+            <Columns>
+                <asp:CommandField ShowEditButton="True" ShowDeleteButton="True"></asp:CommandField>
+                <asp:BoundField DataField="Cod_veterinario" HeaderText="Cod_veterinario" ReadOnly="True" InsertVisible="False" SortExpression="Cod_veterinario"></asp:BoundField>
+
+                <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />
+                <asp:BoundField DataField="Idade" HeaderText="Idade" SortExpression="Idade" />
+                <asp:BoundField DataField="Sexo" HeaderText="Sexo" SortExpression="Sexo" />
+                <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
             </Columns>
         </asp:GridView>
     </asp:Panel>
