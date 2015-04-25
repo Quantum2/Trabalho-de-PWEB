@@ -118,5 +118,15 @@ namespace Trabalho_de_PWEB.Admin
             GridView3.DataBind();
             con.Close();
         }
+
+        protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
