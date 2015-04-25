@@ -28,9 +28,9 @@
     <asp:SqlDataSource ID="lista_animais" runat="server" ConnectionString="<%$ ConnectionStrings:DBContext %>" SelectCommand="SELECT [cod_animal], [nome] FROM [Animal] ORDER BY [nome]"></asp:SqlDataSource>
     <div>
         <h4>
-            <asp:LinkButton Style="background-color: white;" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Adicionar consultas</asp:LinkButton>&nbsp;
-        <asp:LinkButton Style="background-color: white;" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Modificar animais</asp:LinkButton>&nbsp;
-        <asp:LinkButton Style="background-color: white;" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Modificar utilizadores</asp:LinkButton>&nbsp;
+            <asp:LinkButton Style="background-color: white; font-size: 22px;" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Adicionar consultas</asp:LinkButton>&nbsp;
+        <asp:LinkButton Style="background-color: white; font-size: 22px;" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Modificar animais</asp:LinkButton>&nbsp;
+        <asp:LinkButton Style="background-color: white; font-size: 22px;" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Modificar utilizadores</asp:LinkButton>&nbsp;
         </h4>
     </div>
     <hr />
@@ -90,7 +90,7 @@
         <p></p>
         <asp:Button ID="Button1" runat="server" Text="Adicionar !" OnClick="Button1_Click" />
         <hr />
-        <asp:Label ID="Label6" runat="server" Text="Consultas existentes " Font-Bold="True" Font-Italic="True" Font-Underline="True"></asp:Label>
+        <asp:Label ID="Label6" runat="server" Text="Consultas existentes " Font-Bold="True" Font-Italic="True" Font-Underline="True" style="font-size: 18px"></asp:Label>
         <p></p>
         <asp:GridView ID="GridView1" runat="server" Style="background-color: white;" AllowSorting="True" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="cod_consulta">
             <Columns>
@@ -107,7 +107,7 @@
     </asp:Panel>
 
     <asp:Panel ID="animais" runat="server" Visible="False">
-        <asp:Label ID="Label10" runat="server" Text="Adicionar animal" Font-Bold="True" Font-Italic="True" Font-Underline="True"></asp:Label>
+        <asp:Label ID="Label10" runat="server" Text="Adicionar animal" Font-Bold="True" Font-Italic="True" Font-Underline="True" style="font-size: 18px"></asp:Label>
         <p></p>
         <asp:Label ID="Label11" runat="server" Text="Nome:"></asp:Label>
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox><p></p>
@@ -120,7 +120,7 @@
         </asp:DropDownList><p></p>
         <asp:Button ID="Button2" runat="server" Text="Adicionar" OnClick="Button2_Click" />
         <hr />
-        <asp:Label ID="Label15" runat="server" Text="Animais existentes" Font-Bold="True" Font-Italic="True" Font-Underline="True"></asp:Label><p>
+        <asp:Label ID="Label15" runat="server" Text="Animais existentes" Font-Bold="True" Font-Italic="True" Font-Underline="True" style="font-size: 18px"></asp:Label><p>
             <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:DBContext %>" DeleteCommand="DELETE FROM [Animal] WHERE [cod_animal] = @cod_animal" InsertCommand="INSERT INTO [Animal] ([nome], [raca], [idade]) VALUES (@nome, @raca, @idade)" SelectCommand="SELECT * FROM [Animal] ORDER BY [cod_animal], [nome]" UpdateCommand="UPDATE [Animal] SET [nome] = @nome, [raca] = @raca, [idade] = @idade WHERE [cod_animal] = @cod_animal">
                 <DeleteParameters>
                     <asp:Parameter Name="cod_animal" Type="Int32" />
@@ -171,7 +171,7 @@
                 <asp:Parameter DbType="Date" Name="original_data_nascimento" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:Label ID="Label8" runat="server" Text="Clientes existentes" Font-Bold="True" Font-Italic="True" Font-Underline="True"></asp:Label><p>
+        <asp:Label ID="Label8" runat="server" Text="Clientes existentes" Font-Bold="True" Font-Italic="True" Font-Underline="True" style="font-size: 18px"></asp:Label><p>
             <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:DBContext %>" DeleteCommand="DELETE FROM [Veterinario] WHERE [Cod_veterinario] = @Cod_veterinario" InsertCommand="INSERT INTO [Veterinario] ([Cod_veterinario], [Nome], [Idade], [Sexo]) VALUES (@Cod_veterinario, @Nome, @Idade, @Sexo)" SelectCommand="SELECT Veterinario.Cod_veterinario, Veterinario.Nome, Veterinario.Idade, Veterinario.Sexo, AspNetUsers.Email FROM Veterinario INNER JOIN RelsVeterinarios ON Veterinario.Cod_veterinario = RelsVeterinarios.Cod_veterinario INNER JOIN AspNetUsers ON RelsVeterinarios.user_id = AspNetUsers.Id ORDER BY Veterinario.Nome" UpdateCommand="UPDATE [Veterinario] SET [Nome] = @Nome, [Idade] = @Idade, [Sexo] = @Sexo WHERE [Cod_veterinario] = @Cod_veterinario">
                 <DeleteParameters>
                     <asp:Parameter Name="Cod_veterinario" Type="Int32" />
@@ -195,7 +195,7 @@
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             </Columns>
         </asp:GridView><hr />
-        <asp:Label ID="Label16" runat="server" Text="Veterinários existentes" Font-Bold="True" Font-Italic="True" Font-Underline="True"></asp:Label><p></p>
+        <asp:Label ID="Label16" runat="server" Text="Veterinários existentes" Font-Bold="True" Font-Italic="True" Font-Underline="True" style="font-size: 18px"></asp:Label><p></p>
         <asp:GridView ID="GridView4" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Cod_veterinario" DataSourceID="SqlDataSource5">
             <Columns>
                 <asp:CommandField ShowEditButton="True" ShowDeleteButton="True"></asp:CommandField>
