@@ -13,12 +13,12 @@ using System.Web.Configuration;
 
 namespace Trabalho_de_PWEB.Account
 {
-    public partial class Register2 : Page
+    public partial class Register : Page
     {
-        private string connectionString = WebConfigurationManager.ConnectionStrings["DBContext"].ConnectionString;
+        private string connectionString2 = WebConfigurationManager.ConnectionStrings["DBContext"].ConnectionString;
 
-       
-        protected void MudarPagina(object sender, EventArgs e)
+
+        protected void MudarPagina2(object sender, EventArgs e)
         {
             Response.Redirect("~/Account/Register3");
         }
