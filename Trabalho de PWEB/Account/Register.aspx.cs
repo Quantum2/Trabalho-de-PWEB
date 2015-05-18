@@ -21,8 +21,8 @@ namespace Trabalho_de_PWEB.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text };
-            IdentityResult result = manager.Create(user, Password.Text);
+            var user = new ApplicationUser() { UserName = "", Email = "" };
+            IdentityResult result = manager.Create(user, "");
 
             String selectSQL = "INSERT INTO Cliente (nome) VALUES('" + Nome.Text + "');";
             SqlConnection con = new SqlConnection(connectionString);
@@ -52,6 +52,11 @@ namespace Trabalho_de_PWEB.Account
             {
                 ErrorMessage.Text = result.Errors.FirstOrDefault();
             }
+        }
+
+        protected void MudarPagina(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Account/Register2");
         }
     }
 }
