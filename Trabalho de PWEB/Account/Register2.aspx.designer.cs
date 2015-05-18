@@ -13,6 +13,15 @@ namespace Trabalho_de_PWEB.Account {
     public partial class Register {
         
         /// <summary>
+        /// ErrorMessage2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ErrorMessage2;
+        
+        /// <summary>
         /// Tipo control.
         /// </summary>
         /// <remarks>
@@ -22,21 +31,57 @@ namespace Trabalho_de_PWEB.Account {
         protected global::System.Web.UI.WebControls.DropDownList Tipo;
         
         /// <summary>
-        /// Nome control.
+        /// Nome_animal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Nome;
+        protected global::System.Web.UI.WebControls.TextBox Nome_animal;
         
         /// <summary>
-        /// Data control.
+        /// Data_animal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Data;
+        protected global::System.Web.UI.WebControls.TextBox Data_animal;
+        
+        /// <summary>
+        /// Raca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Raca;
+        
+        /// <summary>
+        /// sexo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList sexo;
+        
+        /// <summary>
+        /// vacinacao2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList vacinacao2;
+        
+        /// <summary>
+        /// Register3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Register3;
     }
 }

@@ -2,6 +2,9 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %></h2>
+    <p class="text-danger">
+        <asp:Literal runat="server" ID="ErrorMessage" />
+    </p>
 
     <p>Criar nova conta na VirtualVet online, vantagens:
     </p>
@@ -33,7 +36,7 @@
             </div>
         </div>
 
-         </div>
+         
          <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Morada" CssClass="col-md-2 control-label">Morada:</asp:Label>
             <div class="col-md-10">
@@ -68,5 +71,7 @@
                 <asp:Button runat="server" ID="Register2" OnClick="MudarPagina" Text="Próximo" CssClass="btn btn-default" />
             </div>
         </div>
+    </div>
+
     </div>
 </asp:Content>

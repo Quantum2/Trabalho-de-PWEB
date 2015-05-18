@@ -1,17 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Owin;
+using Trabalho_de_PWEB.Models;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+using System.Web.Configuration;
 
 namespace Trabalho_de_PWEB.Account
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Register2 : Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+        private string connectionString = WebConfigurationManager.ConnectionStrings["DBContext"].ConnectionString;
 
+       
+        protected void MudarPagina(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Account/Register3");
         }
     }
 }

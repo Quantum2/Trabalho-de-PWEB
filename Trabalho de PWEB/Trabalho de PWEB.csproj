@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Register2.aspx" />
+    <Content Include="Account\Register3.aspx" />
     <Content Include="Admin\Principal.aspx" />
     <Content Include="aloja.aspx" />
     <Content Include="imagens\100_0681-e1362407568758.jpg" />
@@ -308,6 +309,13 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register3.aspx.cs">
+      <DependentUpon>Register3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register3.aspx.designer.cs">
+      <DependentUpon>Register3.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\RegisterExternalLogin.aspx.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
