@@ -7,7 +7,7 @@
     </p>
 
     <div class="form-horizontal">
-        <h4>Enter your new password</h4>
+        <h4>Introduza a nova palavra-passe</h4>
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="form-group">
@@ -15,7 +15,7 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                    CssClass="text-danger" ErrorMessage="The email field is required." />
+                    CssClass="text-danger" ErrorMessage="O email é obrigatório!" />
             </div>
         </div>
         <div class="form-group">
@@ -23,7 +23,7 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
-                    CssClass="text-danger" ErrorMessage="The password field is required." />
+                    CssClass="text-danger" ErrorMessage="A palavra-passe é obrigatória" />
             </div>
         </div>
         <div class="form-group">
@@ -31,9 +31,9 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="A confirmação da palavra-passe é obrigatória!" />
                 <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="A palavra-passe e a confirmação da palavra-passe não corresponde!" />
             </div>
         </div>
         <div class="form-group">
