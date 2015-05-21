@@ -49,24 +49,6 @@ namespace Trabalho_de_PWEB.Account {
         protected global::System.Web.UI.WebControls.TextBox Morada;
         
         /// <summary>
-        /// cod_postal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cod_postal;
-        
-        /// <summary>
-        /// localidade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox localidade;
-        
-        /// <summary>
         /// Register2 control.
         /// </summary>
         /// <remarks>

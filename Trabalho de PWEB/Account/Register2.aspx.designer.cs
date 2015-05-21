@@ -58,24 +58,6 @@ namespace Trabalho_de_PWEB.Account {
         protected global::System.Web.UI.WebControls.DropDownList Raca;
         
         /// <summary>
-        /// sexo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList sexo;
-        
-        /// <summary>
-        /// vacinacao2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList vacinacao2;
-        
-        /// <summary>
         /// Register3 control.
         /// </summary>
         /// <remarks>

@@ -2,12 +2,21 @@
 
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-
-    <div class="form-horizontal">
+        <h2><%: Title %></h2>
         <p class="text-danger">
-            <asp:Literal runat="server" ID="ErrorMessage3" />
+        <asp:Literal runat="server" ID="ErrorMessage3" />
+        </p>
+         <p>Criar nova conta na VirtualVet online, vantagens:
+        </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Marcação de consultas online;
+        </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Consulta dos registos dos animais.
         </p>
         <p>&nbsp;</p>
+
+    <div class="form-horizontal">
+        <h4>Criar nova conta!</h4>
+        <hr />
         <p>Dados para acesso a sua conta: </p>
 
         <div class="form-group">
@@ -38,14 +47,14 @@
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="A Palavra-Passe não está igual a confirmação da Palavra-Passe." />
             </div>
         </div>
-
+        </div>
 
 <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Registar" CssClass="btn btn-default" />
+                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Próximo" CssClass="btn btn-default" />
             </div>
         </div>
 
-        </div>
+     
 
 </asp:Content>

@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using Trabalho_de_PWEB.Models;
+using System.Data.SqlClient;
 
 namespace Trabalho_de_PWEB.Account
 {
@@ -19,9 +20,8 @@ namespace Trabalho_de_PWEB.Account
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {
-
                 signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                IdentityHelper.RedirectToReturnUrl("~/Account/Register", Response);
             }
             else
             {

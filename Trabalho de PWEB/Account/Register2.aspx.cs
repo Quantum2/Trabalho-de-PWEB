@@ -17,10 +17,20 @@ namespace Trabalho_de_PWEB.Account
     {
         private string connectionString2 = WebConfigurationManager.ConnectionStrings["DBContext"].ConnectionString;
 
-
         protected void MudarPagina2(object sender, EventArgs e)
         {
-            Response.Redirect("~/Account/Register3");
+            String command1 = "INSERT INTO [Animal] ([nome], [raca], [idade]) VALUES (@nome, @raca, @idade)";
+            SqlConnection con= new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand(command1, con);
+            cmd.Parameters.AddWithValue("@nome", Nome_animal.Text);
+            cmd.Parameters.AddWithValue("@raca", Raca.Text);
+            cmd.Parameters.AddWithValue("@idade", Data_animal.Text);
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            Response.Redirect("~/");
         }
     }
 }
