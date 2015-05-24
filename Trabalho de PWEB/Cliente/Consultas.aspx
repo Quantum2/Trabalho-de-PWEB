@@ -7,6 +7,11 @@
             <asp:Parameter Name="user_id" />
         </SelectParameters>
     </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DBContext %>" SelectCommand="SELECT * FROM [RelsClientes] WHERE ([user_id] = @user_id)">
+        <SelectParameters>
+            <asp:Parameter Name="user_id" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
     <hr />
     <h3>
         <asp:LinkButton ID="existentes" Style="background-color: white; font-size: 22px;" runat="server" OnClick="existentes_Click">Consultas existentes</asp:LinkButton>&nbsp;
@@ -38,25 +43,9 @@
     </asp:Panel>
 
     <asp:Panel ID="Panel2" runat="server" Visible="False">
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DBContext %>" DeleteCommand="DELETE FROM [Consulta] WHERE [cod_consulta] = @cod_consulta" InsertCommand="INSERT INTO [Consulta] ([local], [data], [hora]) VALUES (@local, @data, @hora)" SelectCommand="SELECT * FROM [Consulta]" UpdateCommand="UPDATE [Consulta] SET [local] = @local, [data] = @data, [hora] = @hora WHERE [cod_consulta] = @cod_consulta">
-            <DeleteParameters>
-                <asp:Parameter Name="cod_consulta" Type="Int32" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="local" Type="String" />
-                <asp:Parameter DbType="Date" Name="data" />
-                <asp:Parameter DbType="Time" Name="hora" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="local" Type="String" />
-                <asp:Parameter DbType="Date" Name="data" />
-                <asp:Parameter DbType="Time" Name="hora" />
-                <asp:Parameter Name="cod_consulta" Type="Int32" />
-            </UpdateParameters>
-        </asp:SqlDataSource>
         <asp:Label ID="Label1" runat="server" Text="Local:" Font-Bold="True"></asp:Label><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <p></p>
-        <asp:Label ID="Label2" runat="server" Text="Data:" Font-Bold="True"></asp:Label><asp:TextBox ID="TextBox2" runat="server" TextMode="DateTime"></asp:TextBox>
+        <asp:Label ID="Label2" runat="server" Text="Data:" Font-Bold="True"></asp:Label><asp:TextBox ID="TextBox2" runat="server" TextMode="Date"></asp:TextBox>
         <p></p>
         <asp:Label ID="Label3" runat="server" Text="Hora:" Font-Bold="True"></asp:Label>
         <asp:DropDownList ID="DropDownList1" runat="server">
