@@ -10,11 +10,14 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using Trabalho_de_PWEB.Models;
+using System.Web.Configuration;
 
 namespace Trabalho_de_PWEB.Cliente
 {
     public partial class Consultas : System.Web.UI.Page
     {
+        private string connectionString = WebConfigurationManager.ConnectionStrings["DBContext"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             String userid;
@@ -25,7 +28,6 @@ namespace Trabalho_de_PWEB.Cliente
             userid = user.Id;
 
             SqlDataSource1.SelectParameters["user_id"].DefaultValue = userid;
-            GridView1.DataBind();
         }
 
         public void existentes_Click(object sender, EventArgs e)
@@ -47,6 +49,14 @@ namespace Trabalho_de_PWEB.Cliente
             PlaceHolder1.Visible = false;
             PlaceHolder2.Visible = false;
             PlaceHolder3.Visible = true;
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string query1 = "";
+            string query2 = "";
+
+
         }
     }
 }
