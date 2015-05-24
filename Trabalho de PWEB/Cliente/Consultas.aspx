@@ -74,6 +74,30 @@
     </asp:Panel>
 
     <asp:Panel ID="Panel3" runat="server" Visible="False">
-
+        <h4>Lista de animais em consultas<asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:DBContext %>" SelectCommand="SELECT Animal.nome, Animal.raca, Animal.idade FROM RelsClientes INNER JOIN Cliente_consulta ON RelsClientes.cod_cliente = Cliente_consulta.cod_cliente INNER JOIN Animal INNER JOIN Animal_consulta ON Animal.cod_animal = Animal_consulta.cod_animal ON Cliente_consulta.cod_consulta = Animal_consulta.cod_consulta WHERE (RelsClientes.user_id = @user_id)">
+            <SelectParameters>
+                <asp:Parameter Name="user_id" />
+            </SelectParameters>
+            </asp:SqlDataSource>
+        </h4><p>
+            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <Columns>
+                    <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
+                    <asp:BoundField DataField="raca" HeaderText="raca" SortExpression="raca" />
+                    <asp:BoundField DataField="idade" HeaderText="idade" SortExpression="idade" />
+                </Columns>
+                <EditRowStyle BackColor="#999999" />
+                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+            </asp:GridView>
+        </p>
     </asp:Panel>
 </asp:Content>

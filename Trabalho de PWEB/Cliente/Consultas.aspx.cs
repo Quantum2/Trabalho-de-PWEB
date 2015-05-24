@@ -118,7 +118,8 @@ namespace Trabalho_de_PWEB.Cliente
 
             for(int i = 0; i < myString.Count; i++)
             {
-                if ((string)cmd.Parameters["@hora"].Value == myString3[i] && Convert.ToDateTime(cmd.Parameters["@data"].Value.ToString()) == myString2[i])
+                string temp = cmd.Parameters["@data"].Value.ToString();
+                if (((string)cmd.Parameters["@hora"].Value + ":00") == myString3[i] && myString3.Any(s => s.Contains(temp)))
                 {
                     valido = 0;
                 }
