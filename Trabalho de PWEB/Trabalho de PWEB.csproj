@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -149,12 +150,14 @@
     <Content Include="Account\Register3.aspx" />
     <Content Include="Admin\Principal.aspx" />
     <Content Include="aloja.aspx" />
+    <Content Include="Content\slider_multiple.css" />
     <Content Include="imagens\100_0681-e1362407568758.jpg" />
     <Content Include="imagens\coelho.jpg" />
     <Content Include="imagens\gatos-podem-prever-sua-morte.jpg" />
     <Content Include="imagens\medicos-veterinarios-equipa.jpg" />
     <Content Include="imagens\racas-caes.jpg" />
     <Content Include="imagens\Sem Título.png" />
+    <Content Include="Scripts\wpts_slider_multiple.js" />
     <Content Include="serviços.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />

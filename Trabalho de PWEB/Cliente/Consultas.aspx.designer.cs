@@ -49,13 +49,13 @@ namespace Trabalho_de_PWEB.Cliente {
         protected global::System.Web.UI.WebControls.LinkButton animais;
         
         /// <summary>
-        /// PlaceHolder1 control.
+        /// Panel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
+        protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
         /// GridView1 control.
@@ -67,13 +67,22 @@ namespace Trabalho_de_PWEB.Cliente {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// PlaceHolder2 control.
+        /// Panel2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder2;
+        protected global::System.Web.UI.WebControls.Panel Panel2;
+        
+        /// <summary>
+        /// SqlDataSource2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
         
         /// <summary>
         /// Label1 control.
@@ -166,12 +175,12 @@ namespace Trabalho_de_PWEB.Cliente {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// PlaceHolder3 control.
+        /// Panel3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder3;
+        protected global::System.Web.UI.WebControls.Panel Panel3;
     }
 }
