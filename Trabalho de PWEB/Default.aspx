@@ -2,9 +2,27 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <p>&nbsp;</p>
-        
-        
+    <p>&nbsp;</p>
+    <script src="Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.orbit-1.2.3.min.js" type="text/javascript"></script>
+
+    <div id="featured">
+        <img src="imagens/coelho.jpg" alt="Overflow: Hidden No More" />
+        <img src="imagens/gatos-podem-prever-sua-morte.jpg" alt="HTML Captions" />
+        <img src="imagens/racas-caes.jpg" alt="and more features" />
+    </div>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#featured').orbit();
+        });
+    </script>
+        <script type="text/javascript">
+            $(window).load(function () {
+                $('#featured').orbit({
+                    bullets: true
+                });
+            });
+</script>
 
         &nbsp;<h2 class="text-left"><strong>Noticías do mundo Animal</strong></h2>
         <p></p>

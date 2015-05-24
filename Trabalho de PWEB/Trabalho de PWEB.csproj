@@ -150,6 +150,7 @@
     <Content Include="Account\Register3.aspx" />
     <Content Include="Admin\Principal.aspx" />
     <Content Include="aloja.aspx" />
+    <Content Include="Content\orbit-1.2.3.css" />
     <Content Include="Content\slider_multiple.css" />
     <Content Include="imagens\100_0681-e1362407568758.jpg" />
     <Content Include="imagens\coelho.jpg" />
@@ -157,7 +158,17 @@
     <Content Include="imagens\medicos-veterinarios-equipa.jpg" />
     <Content Include="imagens\racas-caes.jpg" />
     <Content Include="imagens\Sem Título.png" />
+    <Content Include="orbit\bullets.jpg" />
+    <Content Include="orbit\left-arrow.png" />
+    <Content Include="orbit\loading.gif" />
+    <Content Include="orbit\mask-black.png" />
+    <Content Include="orbit\pause-black.png" />
+    <Content Include="orbit\right-arrow.png" />
+    <Content Include="orbit\rotator-black.png" />
+    <Content Include="orbit\timer-black.png" />
     <Content Include="Pesquisa.aspx" />
+    <Content Include="Scripts\jquery.orbit-1.2.3.js" />
+    <Content Include="Scripts\jquery.orbit-1.2.3.min.js" />
     <Content Include="Scripts\wpts_slider_multiple.js" />
     <Content Include="serviços.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
