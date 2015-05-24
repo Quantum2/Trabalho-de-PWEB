@@ -13,11 +13,17 @@
         <asp:LinkButton ID="nova" Style="background-color: white; font-size: 22px;" runat="server" OnClick="novas_Click">Marcar nova consulta</asp:LinkButton>&nbsp;
         <asp:LinkButton ID="animais" Style="background-color: white; font-size: 22px;" runat="server" OnClick="animais_Click">Os seus animais</asp:LinkButton>
     </h3>
+    <hr />
     <asp:PlaceHolder ID="PlaceHolder1" runat="server">
-        <hr />
-        <h4>Lista de consultas :</h4>
-        
+
+        <h4>Lista de consultas</h4>
+        <p></p>
+        <asp:GridView ID="GridView2" runat="server">
+        </asp:GridView>
+
     </asp:PlaceHolder>
+
     <asp:PlaceHolder ID="PlaceHolder2" runat="server" Visible="False"></asp:PlaceHolder>
+
     <asp:PlaceHolder ID="PlaceHolder3" runat="server" Visible="False"></asp:PlaceHolder>
 </asp:Content>
