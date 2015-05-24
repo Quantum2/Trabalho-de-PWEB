@@ -24,7 +24,7 @@ namespace Trabalho_de_PWEB.Cliente
 
             userid = user.Id;
 
-            SqlDataSource1.SelectParameters["userid_var"].DefaultValue = userid;
+            SqlDataSource1.SelectParameters["user_id"].DefaultValue = userid;
             GridView1.DataBind();
         }
 
