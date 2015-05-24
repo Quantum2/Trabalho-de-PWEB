@@ -38,7 +38,7 @@ Musasa aguarda a autorização da autoridade que gere a vida selvagem no Zimbabu
  
 Note-se que, recentemente, Robert Mugabe tem vindo a ser criticado por pretender exportar 27 elefantes para a China, país conhecido pelo negócio do marfim.
  
-A festa dos 91 anos do ditador terá lugar no Elephant Hills Resort, um luxuoso hotel e spa, durante um campeonato de golfe, em Victoria Falls.</p>
+A festa dos 91 anos do ditador terá lugar no Elephant Hils Resort, um luxuoso hotel e spa, durante um campeonato de golfe, em Victoria Falls.</p>
 
         <p></p>
         <p></p>
