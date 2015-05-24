@@ -92,7 +92,14 @@ namespace Trabalho_de_PWEB.Account
                 SqlDataReader reader2 = cmd2.ExecuteReader();
 
                 if(reader2.Read())
-                    Label1.Text = String.Format("{0}", reader2[0]);
+                    Label1.Text = string.Format("{0}", reader2[0]);
+
+                String selectSQL3 = "SELECT morada FROM Cliente WHERE (cod_cliente = " + cod_cliente + " )";
+                SqlCommand cmd3 = new SqlCommand(selectSQL3, con);
+                SqlDataReader reader3 = cmd3.ExecuteReader();
+
+                if (reader2.Read())
+                    Label2.Text = String.Format("{0}", reader3[0]);
 
                 con.Close();
 

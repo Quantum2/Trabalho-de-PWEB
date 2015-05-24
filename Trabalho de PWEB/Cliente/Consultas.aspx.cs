@@ -32,12 +32,21 @@ namespace Trabalho_de_PWEB.Cliente
         {
             PlaceHolder1.Visible = true;
             PlaceHolder2.Visible = false;
+            PlaceHolder3.Visible = false;
         }
 
         public void novas_Click(object sender, EventArgs e)
         {
             PlaceHolder2.Visible = true;
             PlaceHolder1.Visible = false;
+            PlaceHolder3.Visible = false;
+        }
+
+        protected void animais_Click(object sender, EventArgs e)
+        {
+            PlaceHolder1.Visible = false;
+            PlaceHolder2.Visible = false;
+            PlaceHolder3.Visible = true;
         }
     }
 }

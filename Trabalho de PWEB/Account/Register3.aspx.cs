@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using Trabalho_de_PWEB.Models;
 using System.Data.SqlClient;
+using System.Web.Security;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Trabalho_de_PWEB.Account
 {

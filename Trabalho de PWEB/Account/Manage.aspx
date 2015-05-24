@@ -23,7 +23,8 @@
                 </dl>
                 <hr />
                 <dl class="dl-horizontal">
-                    <dt>Morada:</dt>
+                    <dt>Morada:<asp:Label ID="Label2" runat="server" Font-Bold="False" Visible="False"></asp:Label>
+                    </dt>
                     <dd>
                         <asp:HyperLink NavigateUrl="/Account/ManageAddress" Text="[Change]" Visible="false" ID="HyperLink3" runat="server" />
                     </dd>

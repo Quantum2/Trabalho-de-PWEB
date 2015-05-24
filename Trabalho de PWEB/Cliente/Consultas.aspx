@@ -9,9 +9,9 @@
     </asp:SqlDataSource>
     <hr />
     <h3>
-        <asp:LinkButton ID="existentes" runat="server" OnClick="existentes_Click">Consultas existentes</asp:LinkButton>&nbsp;
-        <asp:LinkButton ID="nova" runat="server" OnClick="novas_Click">Marcar nova consulta</asp:LinkButton>&nbsp;
-        <asp:LinkButton ID="animais" runat="server">Os seus animais</asp:LinkButton>
+        <asp:LinkButton ID="existentes" Style="background-color: white; font-size: 22px;" runat="server" OnClick="existentes_Click">Consultas existentes</asp:LinkButton>&nbsp;
+        <asp:LinkButton ID="nova" Style="background-color: white; font-size: 22px;" runat="server" OnClick="novas_Click">Marcar nova consulta</asp:LinkButton>&nbsp;
+        <asp:LinkButton ID="animais" Style="background-color: white; font-size: 22px;" runat="server" OnClick="animais_Click">Os seus animais</asp:LinkButton>
     </h3>
     <asp:PlaceHolder ID="PlaceHolder1" runat="server">
         <hr />
