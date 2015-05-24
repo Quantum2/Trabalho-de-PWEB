@@ -23,7 +23,7 @@
 
         <div>
         <h4>Lista de consultas</h4>
-        <p></p>
+        <p></p><p></p>
             <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <EditRowStyle BackColor="#999999" />

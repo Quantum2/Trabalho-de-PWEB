@@ -157,6 +157,7 @@
     <Content Include="imagens\medicos-veterinarios-equipa.jpg" />
     <Content Include="imagens\racas-caes.jpg" />
     <Content Include="imagens\Sem Título.png" />
+    <Content Include="Pesquisa.aspx" />
     <Content Include="Scripts\wpts_slider_multiple.js" />
     <Content Include="serviços.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
@@ -384,6 +385,13 @@
       <DependentUpon>aloja.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Pesquisa.aspx.cs">
+      <DependentUpon>Pesquisa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pesquisa.aspx.designer.cs">
+      <DependentUpon>Pesquisa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="serviços.aspx.cs">
       <DependentUpon>serviços.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
