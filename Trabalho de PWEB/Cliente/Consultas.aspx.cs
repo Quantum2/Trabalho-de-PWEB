@@ -32,7 +32,9 @@ namespace Trabalho_de_PWEB.Cliente
             userid = user.Id;
 
             SqlDataSource1.SelectParameters["user_id"].DefaultValue = userid;
+            SqlDataSource4.SelectParameters["user_id"].DefaultValue = userid;
             GridView1.DataBind();
+            GridView2.DataBind();
             Page.Title = "Área do cliente";
 
             SqlConnection con = new SqlConnection(connectionString);
@@ -139,6 +141,43 @@ namespace Trabalho_de_PWEB.Cliente
             }
 
             con.Close();
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            String query = "INSERT INTO Animal (nome, raca, idade) VALUES(@nome, @raca, @idade)";
+            String query2 = "INSERT INTO Cliente_Animal (cod_animal, cod_cliente) VALUES(@c1, @c2)";
+            String read = "SELECT cod_animal FROM Animal";
+            var myString = new List<Int32>();
+
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlCommand cmd2 = new SqlCommand(query2, con);
+            SqlCommand rr = new SqlCommand(read, con);
+
+            con.Open();
+
+            SqlDataReader rdr = rr.ExecuteReader();
+            while (rdr.Read())
+            {
+                myString.Add(rdr.GetInt32(0));
+            }
+            rdr.Close();
+
+            cmd.Parameters.AddWithValue("@nome", TextBox3.Text);
+            cmd.Parameters.AddWithValue("@raca", TextBox4.Text);
+            cmd.Parameters.AddWithValue("@idade", TextBox5.Text);
+            if (myString.Count != 0)
+                cmd2.Parameters.AddWithValue("@c1", myString.Last());
+            else
+                cmd2.Parameters.AddWithValue("@c1", 1);
+            cmd2.Parameters.AddWithValue("@c2", idCliente);
+
+            cmd.ExecuteNonQuery();
+            cmd2.ExecuteNonQuery();
+
+            con.Close();
+            GridView2.DataBind();
         }
     }
 }

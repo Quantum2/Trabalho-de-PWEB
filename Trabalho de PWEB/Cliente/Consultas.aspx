@@ -74,7 +74,7 @@
     </asp:Panel>
 
     <asp:Panel ID="Panel3" runat="server" Visible="False">
-        <h4>Lista de animais em consultas<asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:DBContext %>" SelectCommand="SELECT Animal.nome, Animal.raca, Animal.idade FROM RelsClientes INNER JOIN Cliente_consulta ON RelsClientes.cod_cliente = Cliente_consulta.cod_cliente INNER JOIN Animal INNER JOIN Animal_consulta ON Animal.cod_animal = Animal_consulta.cod_animal ON Cliente_consulta.cod_consulta = Animal_consulta.cod_consulta WHERE (RelsClientes.user_id = @user_id)">
+        <h4>Lista de animais em consultas<asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:DBContext %>" SelectCommand="SELECT Animal.nome, Animal.raca, Animal.idade FROM Animal INNER JOIN Cliente_Animal ON Animal.cod_animal = Cliente_Animal.cod_animal INNER JOIN RelsClientes ON Cliente_Animal.cod_cliente = RelsClientes.cod_cliente WHERE (RelsClientes.user_id = @user_id)">
             <SelectParameters>
                 <asp:Parameter Name="user_id" />
             </SelectParameters>
@@ -98,6 +98,18 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
-        </p>
+        </p><p></p>
+        <h4>Adicionar animal</h4>
+        <hr />
+        <asp:Label ID="Label6" runat="server" Text="Nome:" Font-Bold="True"></asp:Label>
+
+        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox><p></p>
+        <asp:Label ID="Label7" runat="server" Text="Raça:" Font-Bold="True"></asp:Label>
+
+        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox><p></p>
+
+        <asp:Label ID="Label8" runat="server" Text="Idade:" Font-Bold="True"></asp:Label>
+        <asp:TextBox ID="TextBox5" runat="server" TextMode="Number"></asp:TextBox><p></p>
+        <asp:Button ID="Button2" runat="server" Text="Adicionar" OnClick="Button2_Click" />
     </asp:Panel>
 </asp:Content>
